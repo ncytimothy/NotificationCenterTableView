@@ -9,23 +9,37 @@
 import UIKit
 
 class FavoritePeopleVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    // MARK: - Properties
+    var names = [String]()
+    @IBOutlet weak var favoritePeopleTable: UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        names = appDelegate.names
+        NotificationCenter.default.addObserver(self, selector: #(self.reloadTable), name: NSNotification.Name(rawValue: "reloadTable"), object: nil)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func reloadTable() {
+        favoritePeopleTable.reloadData()
     }
-
+    
+    @IBAction func addName(_ sender: Any) {
+        let addNameVC = storyboard?.instantiateViewController(withIdentifier: "NameAdderVC") as! NameAdderViewController
+        self.present(addNameVC, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        print("names.count: \(names.count)")
+        return names.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell") as! UITableViewCell
+        cell.textLabel?.text = names[indexPath.row]
+        
+        return cell
     }
 
 }

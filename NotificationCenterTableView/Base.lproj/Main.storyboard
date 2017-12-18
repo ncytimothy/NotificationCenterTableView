@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="CIC-oZ-DSw" style="IBUITableViewCellStyleDefault" id="6OZ-XF-ugb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="nameCell" textLabel="CIC-oZ-DSw" style="IBUITableViewCellStyleDefault" id="6OZ-XF-ugb">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6OZ-XF-ugb" id="cVS-4h-4Sf">
@@ -50,7 +50,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Favorite People" id="tnT-bA-WDy">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eIc-5O-rTJ"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eIc-5O-rTJ">
+                                            <connections>
+                                                <action selector="addName:" destination="BYZ-38-t0r" id="RCo-9a-iVh"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -64,6 +68,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="favoritePeopleTable" destination="sUD-0p-5c6" id="Dmx-8s-c3c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -72,41 +79,46 @@
         <!--Name Adder VC-->
         <scene sceneID="TVt-Ol-2AO">
             <objects>
-                <viewController id="U3M-6I-kkc" userLabel="Name Adder VC" customClass="NameAdderViewController" customModule="NotificationCenterTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NameAdderVC" id="U3M-6I-kkc" userLabel="Name Adder VC" customClass="NameAdderViewController" customModule="NotificationCenterTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vRK-gv-ucI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uBF-zy-Lp4">
-                                <rect key="frame" x="46" y="157" width="283" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a name!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8as-RK-nWG">
                                 <rect key="frame" x="139" y="90" width="96" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uBF-zy-Lp4">
+                                <rect key="frame" x="56" y="157" width="268" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW9-vy-Tup">
                                 <rect key="frame" x="172" y="256" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addName:" destination="U3M-6I-kkc" eventType="touchUpInside" id="aOT-ph-gba"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pu6-WT-lKA" firstAttribute="bottom" secondItem="uBF-zy-Lp4" secondAttribute="bottom" constant="480" id="83G-oR-ulR"/>
-                            <constraint firstItem="uBF-zy-Lp4" firstAttribute="centerX" secondItem="8as-RK-nWG" secondAttribute="centerX" id="bwp-AW-AUH"/>
-                            <constraint firstItem="uBF-zy-Lp4" firstAttribute="leading" secondItem="Pu6-WT-lKA" secondAttribute="leading" constant="46" id="cWR-ln-Cg1"/>
-                            <constraint firstItem="gW9-vy-Tup" firstAttribute="centerX" secondItem="uBF-zy-Lp4" secondAttribute="centerX" id="dez-W4-uUX"/>
-                            <constraint firstItem="gW9-vy-Tup" firstAttribute="leading" secondItem="uBF-zy-Lp4" secondAttribute="leading" constant="126" id="g86-oV-OFF"/>
-                            <constraint firstItem="uBF-zy-Lp4" firstAttribute="top" secondItem="8as-RK-nWG" secondAttribute="bottom" constant="46" id="rz3-yo-9TC"/>
-                            <constraint firstItem="gW9-vy-Tup" firstAttribute="top" secondItem="uBF-zy-Lp4" secondAttribute="bottom" constant="69" id="u4Z-Js-L9b"/>
-                            <constraint firstItem="8as-RK-nWG" firstAttribute="leading" secondItem="Pu6-WT-lKA" secondAttribute="leading" constant="139" id="zan-EN-us5"/>
+                            <constraint firstItem="8as-RK-nWG" firstAttribute="centerX" secondItem="vRK-gv-ucI" secondAttribute="centerX" id="0Fj-Ll-uaZ"/>
+                            <constraint firstItem="uBF-zy-Lp4" firstAttribute="top" secondItem="8as-RK-nWG" secondAttribute="bottom" constant="46" id="1o1-fB-7cg"/>
+                            <constraint firstItem="gW9-vy-Tup" firstAttribute="centerY" secondItem="Pu6-WT-lKA" secondAttribute="centerY" constant="-72.5" id="2S9-x3-rE4"/>
+                            <constraint firstItem="8as-RK-nWG" firstAttribute="centerY" secondItem="Pu6-WT-lKA" secondAttribute="centerY" constant="-243" id="HYE-Tq-uXe"/>
+                            <constraint firstItem="8as-RK-nWG" firstAttribute="centerX" secondItem="gW9-vy-Tup" secondAttribute="centerX" id="JKY-61-f0O"/>
+                            <constraint firstItem="uBF-zy-Lp4" firstAttribute="leading" secondItem="Pu6-WT-lKA" secondAttribute="leading" constant="56" id="Zzr-PY-Fe9"/>
+                            <constraint firstItem="Pu6-WT-lKA" firstAttribute="trailing" secondItem="uBF-zy-Lp4" secondAttribute="trailing" constant="51" id="khK-bc-ihb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pu6-WT-lKA"/>
                     </view>
+                    <connections>
+                        <outlet property="nameText" destination="uBF-zy-Lp4" id="4jL-2d-5v1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AEq-hs-mcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
