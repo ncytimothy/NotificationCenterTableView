@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		728A0E151FE82C6000D64BC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A0E141FE82C6000D64BC5 /* AppDelegate.swift */; };
-		728A0E171FE82C6000D64BC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A0E161FE82C6000D64BC5 /* ViewController.swift */; };
+		728A0E171FE82C6000D64BC5 /* FavoritePeopleTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A0E161FE82C6000D64BC5 /* FavoritePeopleTableVC.swift */; };
 		728A0E1A1FE82C6000D64BC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 728A0E181FE82C6000D64BC5 /* Main.storyboard */; };
 		728A0E1C1FE82C6000D64BC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 728A0E1B1FE82C6000D64BC5 /* Assets.xcassets */; };
 		728A0E1F1FE82C6000D64BC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 728A0E1D1FE82C6000D64BC5 /* LaunchScreen.storyboard */; };
+		728A0E271FE82E5600D64BC5 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A0E261FE82E5600D64BC5 /* Name.swift */; };
+		728A0E291FE82F0D00D64BC5 /* NameAdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A0E281FE82F0D00D64BC5 /* NameAdderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		728A0E111FE82C6000D64BC5 /* NotificationCenterTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationCenterTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728A0E141FE82C6000D64BC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		728A0E161FE82C6000D64BC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		728A0E161FE82C6000D64BC5 /* FavoritePeopleTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePeopleTableVC.swift; sourceTree = "<group>"; };
 		728A0E191FE82C6000D64BC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		728A0E1B1FE82C6000D64BC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		728A0E1E1FE82C6000D64BC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		728A0E201FE82C6000D64BC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		728A0E261FE82E5600D64BC5 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		728A0E281FE82F0D00D64BC5 /* NameAdderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameAdderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				728A0E141FE82C6000D64BC5 /* AppDelegate.swift */,
-				728A0E161FE82C6000D64BC5 /* ViewController.swift */,
+				728A0E161FE82C6000D64BC5 /* FavoritePeopleTableVC.swift */,
+				728A0E281FE82F0D00D64BC5 /* NameAdderViewController.swift */,
+				728A0E261FE82E5600D64BC5 /* Name.swift */,
 				728A0E181FE82C6000D64BC5 /* Main.storyboard */,
 				728A0E1B1FE82C6000D64BC5 /* Assets.xcassets */,
 				728A0E1D1FE82C6000D64BC5 /* LaunchScreen.storyboard */,
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				728A0E171FE82C6000D64BC5 /* ViewController.swift in Sources */,
+				728A0E271FE82E5600D64BC5 /* Name.swift in Sources */,
+				728A0E171FE82C6000D64BC5 /* FavoritePeopleTableVC.swift in Sources */,
 				728A0E151FE82C6000D64BC5 /* AppDelegate.swift in Sources */,
+				728A0E291FE82F0D00D64BC5 /* NameAdderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
