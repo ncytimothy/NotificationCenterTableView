@@ -18,7 +18,8 @@ class FavoritePeopleVC: UIViewController, UITableViewDataSource, UITableViewDele
         super.viewWillAppear(animated)
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         names = appDelegate.names
-        NotificationCenter.default.addObserver(self, selector: #(self.reloadTable), name: NSNotification.Name(rawValue: "reloadTable"), object: nil)
+        print("viewWillAppear TableView called!")
+        favoritePeopleTable.reloadData()
     }
     
     func reloadTable() {
@@ -26,9 +27,13 @@ class FavoritePeopleVC: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     @IBAction func addName(_ sender: Any) {
-        let addNameVC = storyboard?.instantiateViewController(withIdentifier: "NameAdderVC") as! NameAdderViewController
-        self.present(addNameVC, animated: true, completion: nil)
+//        let nameAdderVC = storyboard?.instantiateViewController(withIdentifier: "NameAdderVC") as! NameAdderViewController
+//        present(nameAdderVC, animated: true, completion: nil)
+        
+        let nameAdderVC = storyboard?.instantiateViewController(withIdentifier: "NameAdderVC") as! UIViewController
+        navigationController?.pushViewController(nameAdderVC, animated: true)
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("names.count: \(names.count)")

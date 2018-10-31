@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72000F131FEA25ED00E4B43A /* TestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72000F121FEA25ED00E4B43A /* TestTableViewController.swift */; };
 		728A0E151FE82C6000D64BC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A0E141FE82C6000D64BC5 /* AppDelegate.swift */; };
 		728A0E171FE82C6000D64BC5 /* FavoritePeopleTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728A0E161FE82C6000D64BC5 /* FavoritePeopleTableVC.swift */; };
 		728A0E1A1FE82C6000D64BC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 728A0E181FE82C6000D64BC5 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		72000F121FEA25ED00E4B43A /* TestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewController.swift; sourceTree = "<group>"; };
 		728A0E111FE82C6000D64BC5 /* NotificationCenterTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationCenterTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		728A0E141FE82C6000D64BC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		728A0E161FE82C6000D64BC5 /* FavoritePeopleTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePeopleTableVC.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				728A0E141FE82C6000D64BC5 /* AppDelegate.swift */,
 				728A0E161FE82C6000D64BC5 /* FavoritePeopleTableVC.swift */,
+				72000F121FEA25ED00E4B43A /* TestTableViewController.swift */,
 				728A0E281FE82F0D00D64BC5 /* NameAdderViewController.swift */,
 				728A0E181FE82C6000D64BC5 /* Main.storyboard */,
 				728A0E1B1FE82C6000D64BC5 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 				728A0E171FE82C6000D64BC5 /* FavoritePeopleTableVC.swift in Sources */,
 				728A0E151FE82C6000D64BC5 /* AppDelegate.swift in Sources */,
 				728A0E291FE82F0D00D64BC5 /* NameAdderViewController.swift in Sources */,
+				72000F131FEA25ED00E4B43A /* TestTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

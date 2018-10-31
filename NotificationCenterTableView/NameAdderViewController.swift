@@ -16,6 +16,10 @@ class NameAdderViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameText: UITextField!
     
+    @IBAction func pressCancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func addName(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if let newName = nameText?.text {
@@ -23,7 +27,6 @@ class NameAdderViewController: UIViewController, UITextFieldDelegate {
             self.nameText.resignFirstResponder()
             print("appDelegate.names: \(appDelegate.names)")
             self.dismiss(animated: true, completion: nil)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadTable"), object: nil)
         }
     }
 }
